@@ -128,7 +128,7 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 76.2
-        width: 656
+        width: 164
         height: 73.8
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -147,9 +147,9 @@ TextureImporter:
       name: Spr_GoodEnding_ForestIllusion_Front (lp) 1_1
       rect:
         serializedVersion: 2
-        x: 0
-        y: 3.199997
-        width: 656
+        x: 164
+        y: 76.2
+        width: 164
         height: 73.8
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -160,6 +160,132 @@ TextureImporter:
       bones: []
       spriteID: 16b1b464fa16c2c42af6f0e88c6805c9
       internalID: 153783248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spr_GoodEnding_ForestIllusion_Front (lp) 1_2
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 76.2
+        width: 164
+        height: 73.8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d11f1734a3dd254f8a0c98ccfa8f6af
+      internalID: 1770938336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spr_GoodEnding_ForestIllusion_Front (lp) 1_3
+      rect:
+        serializedVersion: 2
+        x: 492
+        y: 76.2
+        width: 164
+        height: 73.8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2f7deb1afa0b204a857355abe6185fe
+      internalID: -1233924504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spr_GoodEnding_ForestIllusion_Front (lp) 1_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3.199997
+        width: 164
+        height: 73.8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82b1afc293558f54b98115811a416a23
+      internalID: 1441864079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spr_GoodEnding_ForestIllusion_Front (lp) 1_5
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 3.199997
+        width: 164
+        height: 73.8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65d8f0242d6f83545b4badc27380b50d
+      internalID: 1166257954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spr_GoodEnding_ForestIllusion_Front (lp) 1_6
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 3.199997
+        width: 164
+        height: 73.8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08f2a19f0fcec804a82291619ab338f7
+      internalID: 1218399835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spr_GoodEnding_ForestIllusion_Front (lp) 1_7
+      rect:
+        serializedVersion: 2
+        x: 492
+        y: 3.199997
+        width: 164
+        height: 73.8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e225e495d447fdb41891f015a80ee7f9
+      internalID: 1218021452
       vertices: []
       indices: 
       edges: []
@@ -177,6 +303,12 @@ TextureImporter:
     nameFileIdTable:
       Spr_GoodEnding_ForestIllusion_Front (lp) 1_0: 1839445891
       Spr_GoodEnding_ForestIllusion_Front (lp) 1_1: 153783248
+      Spr_GoodEnding_ForestIllusion_Front (lp) 1_2: 1770938336
+      Spr_GoodEnding_ForestIllusion_Front (lp) 1_3: -1233924504
+      Spr_GoodEnding_ForestIllusion_Front (lp) 1_4: 1441864079
+      Spr_GoodEnding_ForestIllusion_Front (lp) 1_5: 1166257954
+      Spr_GoodEnding_ForestIllusion_Front (lp) 1_6: 1218399835
+      Spr_GoodEnding_ForestIllusion_Front (lp) 1_7: 1218021452
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
