@@ -1,0 +1,1095 @@
+fileFormatVersion: 2
+guid: 48bd299590034fe4fb6ff823b437f12e
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Spr_GoodEnding_ForestIllusion_Front (lp) 3_0
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 337
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c9906b011163b74f9b8a4e70bd2285b
+      internalID: -503178807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spr_GoodEnding_ForestIllusion_Front (lp) 3_1
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 337
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52029ccb9e68d5e47a2e8e940f805514
+      internalID: 413212019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spr_GoodEnding_ForestIllusion_Front (lp) 3_2
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 337
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d51484ebf3ca57f409552f480ead10fc
+      internalID: -153512538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spr_GoodEnding_ForestIllusion_Front (lp) 3_3
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 337
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 794950b67eb7a5341b4a87cb2577d3b7
+      internalID: -1467796517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spr_GoodEnding_ForestIllusion_Front (lp) 3_4
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 305
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ef736d954740c44cb0842da0f9295fb
+      internalID: 58172339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spr_GoodEnding_ForestIllusion_Front (lp) 3_5
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 305
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e44ce1d39335154489fa8aed72f0b81
+      internalID: -683133825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spr_GoodEnding_ForestIllusion_Front (lp) 3_6
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 305
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8c33dbc69be3cc439094c1947387336
+      internalID: -721351634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spr_GoodEnding_ForestIllusion_Front (lp) 3_7
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 305
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1c6aa264c627d8408bfbc2bebdf621a
+      internalID: 1253846584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spr_GoodEnding_ForestIllusion_Front (lp) 3_8
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 273
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bbbea5040900dea48b2fb640ba81c26e
+      internalID: -142819596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spr_GoodEnding_ForestIllusion_Front (lp) 3_9
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 273
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4d702bae9ac2c542b5b4aeda0fc2a4a
+      internalID: 723811823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spr_GoodEnding_ForestIllusion_Front (lp) 3_10
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 273
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 247dd0bc2c2b89b4293aa585051b7922
+      internalID: -1431179406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spr_GoodEnding_ForestIllusion_Front (lp) 3_11
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 273
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d096d80087334e047a72c77eb34560ac
+      internalID: -356534839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spr_GoodEnding_ForestIllusion_Front (lp) 3_12
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 241
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27f519538750376408ea3ae9ae78171e
+      internalID: -1226197528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spr_GoodEnding_ForestIllusion_Front (lp) 3_13
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 241
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3e2c104d16f6814eac60083c9d03f51
+      internalID: -971455016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spr_GoodEnding_ForestIllusion_Front (lp) 3_14
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 241
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4338b7aecdcea1849b70f6c38dfe2374
+      internalID: 2075627637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spr_GoodEnding_ForestIllusion_Front (lp) 3_15
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 241
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21ca5b7970872f146a2187a8188b73ab
+      internalID: -17518494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spr_GoodEnding_ForestIllusion_Front (lp) 3_16
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 209
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b3a5f438bc8dce418e306a6da8bd717
+      internalID: 904758517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spr_GoodEnding_ForestIllusion_Front (lp) 3_17
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 209
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 447c2cc6db779de4eab0ca1d24003d69
+      internalID: -894145891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spr_GoodEnding_ForestIllusion_Front (lp) 3_18
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 209
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e42b7316b0e0d534792f55512d1d95dc
+      internalID: 1433029796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spr_GoodEnding_ForestIllusion_Front (lp) 3_19
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 209
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b869673809390cd44aa41b7f01f2f57f
+      internalID: -450645797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spr_GoodEnding_ForestIllusion_Front (lp) 3_20
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 177
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fae99242b72b20e47a180da0110e1875
+      internalID: 1493386114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spr_GoodEnding_ForestIllusion_Front (lp) 3_21
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 177
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13533ea3622a1bc4a80a26ded4897f76
+      internalID: -439869988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spr_GoodEnding_ForestIllusion_Front (lp) 3_22
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 177
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a18ec3668176a543913f978098d4f8a
+      internalID: -2093725614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spr_GoodEnding_ForestIllusion_Front (lp) 3_23
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 177
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a60975e4bea16044a9c8591151edcb82
+      internalID: 145456822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spr_GoodEnding_ForestIllusion_Front (lp) 3_24
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 145
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b424985295a6a08468ab258d6d2a454d
+      internalID: 1411835246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spr_GoodEnding_ForestIllusion_Front (lp) 3_25
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 145
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2a8b20c769125048a985be19b2eb8e8
+      internalID: 410587762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spr_GoodEnding_ForestIllusion_Front (lp) 3_26
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 145
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a834843cf0c6e8f479aef8d7cadf7d4d
+      internalID: -1123928054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spr_GoodEnding_ForestIllusion_Front (lp) 3_27
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 145
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c9c134d3811f7247a5eaaee3c8634ed
+      internalID: 923928144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spr_GoodEnding_ForestIllusion_Front (lp) 3_28
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 113
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9afe1e78d737657428c995426710b6ea
+      internalID: 705961268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spr_GoodEnding_ForestIllusion_Front (lp) 3_29
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 113
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c898ebd951ef4754d86d792618f75e1f
+      internalID: -1093527911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spr_GoodEnding_ForestIllusion_Front (lp) 3_30
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 113
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86c24fa7e9256f945b1ce4cee66eaa86
+      internalID: -1474670975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spr_GoodEnding_ForestIllusion_Front (lp) 3_31
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 113
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 438f0f7675c8070439e54a88c35d8fae
+      internalID: 1093060168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spr_GoodEnding_ForestIllusion_Front (lp) 3_32
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 81
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4acbb4d764d45b345945c757db3fbb6d
+      internalID: -1086403250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spr_GoodEnding_ForestIllusion_Front (lp) 3_33
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 81
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf57bae017a71e144a50570d2d8e7782
+      internalID: 2072950008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spr_GoodEnding_ForestIllusion_Front (lp) 3_34
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 81
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8291d5d00c310d47801750e2538ad61
+      internalID: -1040015043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spr_GoodEnding_ForestIllusion_Front (lp) 3_35
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 81
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbf63809d15617344a2eab6098a6d73e
+      internalID: -1152400679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spr_GoodEnding_ForestIllusion_Front (lp) 3_36
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 49
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa547c9e6835ddf418a75171709ca2a4
+      internalID: -724852441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spr_GoodEnding_ForestIllusion_Front (lp) 3_37
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 49
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5aebcd35e4b069f4cab2ba8ec4daa785
+      internalID: 359537231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spr_GoodEnding_ForestIllusion_Front (lp) 3_38
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 49
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 758c8e972a1280341840a65ee648bd3c
+      internalID: -221117622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spr_GoodEnding_ForestIllusion_Front (lp) 3_39
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 49
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 610cee020fdbeaa4281f91ee988f5018
+      internalID: -308351475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spr_GoodEnding_ForestIllusion_Front (lp) 3_40
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 17
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d70e51097c99b9499c567ad34c363ba
+      internalID: -42203884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spr_GoodEnding_ForestIllusion_Front (lp) 3_41
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 17
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20ee93f55686c7944842b17257bf99b5
+      internalID: 2096554750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spr_GoodEnding_ForestIllusion_Front (lp) 3_42
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 17
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7e132aa436bb114393e2b7d3b47ccc8
+      internalID: -1534561825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spr_GoodEnding_ForestIllusion_Front (lp) 3_43
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 17
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2eab6c88dc519464ba74ce889de1aab5
+      internalID: -455463623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Spr_GoodEnding_ForestIllusion_Front (lp) 3_0: -503178807
+      Spr_GoodEnding_ForestIllusion_Front (lp) 3_1: 413212019
+      Spr_GoodEnding_ForestIllusion_Front (lp) 3_10: -1431179406
+      Spr_GoodEnding_ForestIllusion_Front (lp) 3_11: -356534839
+      Spr_GoodEnding_ForestIllusion_Front (lp) 3_12: -1226197528
+      Spr_GoodEnding_ForestIllusion_Front (lp) 3_13: -971455016
+      Spr_GoodEnding_ForestIllusion_Front (lp) 3_14: 2075627637
+      Spr_GoodEnding_ForestIllusion_Front (lp) 3_15: -17518494
+      Spr_GoodEnding_ForestIllusion_Front (lp) 3_16: 904758517
+      Spr_GoodEnding_ForestIllusion_Front (lp) 3_17: -894145891
+      Spr_GoodEnding_ForestIllusion_Front (lp) 3_18: 1433029796
+      Spr_GoodEnding_ForestIllusion_Front (lp) 3_19: -450645797
+      Spr_GoodEnding_ForestIllusion_Front (lp) 3_2: -153512538
+      Spr_GoodEnding_ForestIllusion_Front (lp) 3_20: 1493386114
+      Spr_GoodEnding_ForestIllusion_Front (lp) 3_21: -439869988
+      Spr_GoodEnding_ForestIllusion_Front (lp) 3_22: -2093725614
+      Spr_GoodEnding_ForestIllusion_Front (lp) 3_23: 145456822
+      Spr_GoodEnding_ForestIllusion_Front (lp) 3_24: 1411835246
+      Spr_GoodEnding_ForestIllusion_Front (lp) 3_25: 410587762
+      Spr_GoodEnding_ForestIllusion_Front (lp) 3_26: -1123928054
+      Spr_GoodEnding_ForestIllusion_Front (lp) 3_27: 923928144
+      Spr_GoodEnding_ForestIllusion_Front (lp) 3_28: 705961268
+      Spr_GoodEnding_ForestIllusion_Front (lp) 3_29: -1093527911
+      Spr_GoodEnding_ForestIllusion_Front (lp) 3_3: -1467796517
+      Spr_GoodEnding_ForestIllusion_Front (lp) 3_30: -1474670975
+      Spr_GoodEnding_ForestIllusion_Front (lp) 3_31: 1093060168
+      Spr_GoodEnding_ForestIllusion_Front (lp) 3_32: -1086403250
+      Spr_GoodEnding_ForestIllusion_Front (lp) 3_33: 2072950008
+      Spr_GoodEnding_ForestIllusion_Front (lp) 3_34: -1040015043
+      Spr_GoodEnding_ForestIllusion_Front (lp) 3_35: -1152400679
+      Spr_GoodEnding_ForestIllusion_Front (lp) 3_36: -724852441
+      Spr_GoodEnding_ForestIllusion_Front (lp) 3_37: 359537231
+      Spr_GoodEnding_ForestIllusion_Front (lp) 3_38: -221117622
+      Spr_GoodEnding_ForestIllusion_Front (lp) 3_39: -308351475
+      Spr_GoodEnding_ForestIllusion_Front (lp) 3_4: 58172339
+      Spr_GoodEnding_ForestIllusion_Front (lp) 3_40: -42203884
+      Spr_GoodEnding_ForestIllusion_Front (lp) 3_41: 2096554750
+      Spr_GoodEnding_ForestIllusion_Front (lp) 3_42: -1534561825
+      Spr_GoodEnding_ForestIllusion_Front (lp) 3_43: -455463623
+      Spr_GoodEnding_ForestIllusion_Front (lp) 3_5: -683133825
+      Spr_GoodEnding_ForestIllusion_Front (lp) 3_6: -721351634
+      Spr_GoodEnding_ForestIllusion_Front (lp) 3_7: 1253846584
+      Spr_GoodEnding_ForestIllusion_Front (lp) 3_8: -142819596
+      Spr_GoodEnding_ForestIllusion_Front (lp) 3_9: 723811823
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

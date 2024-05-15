@@ -9,6 +9,7 @@ public class Player : MonoBehaviour
     [SerializeField] private float jumpPower; // 점프 파워
     [SerializeField] private float walljumpPower; // 벽 점프 파워
     [SerializeField] private float attackcoolTime = 0.5f; // 공격 쿨타임
+    [SerializeField] private float dashcoolTime = 0.5f; // 대쉬 쿨타임
     [SerializeField] private float slidingSpeed; //벽 내려가는 스피드
 
     [Header("플레이어 바닥감지")]
@@ -23,16 +24,19 @@ public class Player : MonoBehaviour
     [SerializeField] private float wallchkDistance; // 플레이어 벽 감지 범위
     [SerializeField] private LayerMask w_Layer; // 벽 감지 레이어
 
+    [SerializeField] private Ghost ghost;
 
 
     private float isRight = 1f; // 오른쪽을 보고있는지 여부
     private float AttackcurTime;
+    private float dashcurTime;
     private float attackBuffer;
 
     private int attackIndex;
 
     private bool isAttack;
     private bool isGround;
+    private bool isDash;
     private bool isWall;
     [SerializeField] private bool isWallJump;
     private bool canDoubleJump = true; // 2단 점프 가능한 상태인지 여부
@@ -51,7 +55,6 @@ public class Player : MonoBehaviour
     void Update()
     {
         transform.localScale = new Vector3(isRight, 1f, 1f);
-
         if (!isWallJump) { Move(); Flip(); }
         Jump();
         Attack();
@@ -63,7 +66,7 @@ public class Player : MonoBehaviour
         anim.SetBool("isSliding", isWall);
 
         if (Input.GetKeyDown(KeyCode.DownArrow)) // 내려갈때 
-            slidingSpeed = 1f; 
+            slidingSpeed = 1f;
         if (Input.GetKeyUp(KeyCode.DownArrow))
             slidingSpeed = 0.2f;
 
@@ -71,7 +74,7 @@ public class Player : MonoBehaviour
         {
             canDoubleJump = true; isWallJump = false; // 2단점프 가능하게 하고 벽점프 중이 아니다
             rigid.velocity = new Vector2(rigid.velocity.x, rigid.velocity.y * slidingSpeed);
-          
+
 
             if (Input.GetKeyDown(KeyCode.Z))
             {
@@ -88,25 +91,67 @@ public class Player : MonoBehaviour
     }
     void Move() // 움직이는 함수
     {
-        float x;
-        if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow)) x = Input.GetAxis("Horizontal");
-        else x = 0;
 
-        if (!isAttack) rigid.velocity = new Vector2(x * moveSpeed, rigid.velocity.y);
+        if (!isDash)
+        {
+            float x;
+            if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow)) x = Input.GetAxis("Horizontal");
+            else x = 0;
 
-        if (Mathf.Abs(rigid.velocity.x) > 0) anim.SetBool("isRun", true);
-        else anim.SetBool("isRun", false);
+           rigid.velocity = new Vector2(x * moveSpeed, rigid.velocity.y);
 
+            if (Mathf.Abs(rigid.velocity.x) > 0) anim.SetBool("isRun", true);
+            else anim.SetBool("isRun", false);
+
+            if (dashcurTime <= 0)
+            {
+                if (Input.GetKey(KeyCode.C)) // 대쉬
+                {
+                    dashcurTime = dashcoolTime;
+                    StartCoroutine(Dash());
+                }
+            }
+            else dashcurTime -= Time.deltaTime;
+        }
     }
+    IEnumerator Dash()
+    {
+        if (isGround)
+            anim.SetTrigger("isDash");
+        isDash = true;
+        ghost.makeGhost = true;
+
+        // 대시 방향에 따라 힘을 가함
+        Vector2 dashForce = new Vector2(isRight * 8 * 5, 0);
+        rigid.AddForce(dashForce, ForceMode2D.Impulse);
+
+        yield return new WaitForSeconds(0.05f);
+
+        ghost.makeGhost = false;
+        isDash = false;
+    }
+
     void Flip()
     {
-        if (rigid.velocity.x < 0) isRight = -1f;
-        if (rigid.velocity.x > 0) isRight = 1f;
+
+        if (rigid.velocity.x < 0)
+        {
+            isRight = -1f;
+        }
+        else if (rigid.velocity.x > 0)
+        {
+            isRight = 1f;
+        }
+        else
+        {
+            ghost.makeGhost = false;
+        }
+
     }
     void Jump() // 점프
     {
         isGround = Physics2D.OverlapCircle(overlapCirclePos.position, checkRadius, isLayer);
-        isFall = rigid.velocity.y < 0; // 떨어질때 true 아닐땐 false
+        isFall = rigid.velocity.y < -0.1; // 떨어질때 true 아닐땐 false
 
         if (isGround)
         {
@@ -125,6 +170,7 @@ public class Player : MonoBehaviour
             {
                 if (Input.GetKeyDown(KeyCode.Z) && !isAttack && canDoubleJump) // 공중에 있고 공격 중이 아니며 2단 점프 가능한 상태인 경우
                 {
+
                     canDoubleJump = false; // 2단 점프 사용
                     rigid.velocity = Vector2.up * jumpPower;
                     anim.SetTrigger("isDoubleJump");
