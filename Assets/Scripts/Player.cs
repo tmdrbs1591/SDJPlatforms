@@ -62,8 +62,8 @@ public class Player : MonoBehaviour
     }
     void Wall() // 벽타기
     {
-        isWall = Physics2D.Raycast(wallChkPos.position, Vector2.right * isRight, wallchkDistance, w_Layer); // 감지가 된다면 true 아니면 false
-        anim.SetBool("isSliding", isWall);
+            isWall = Physics2D.Raycast(wallChkPos.position, Vector2.right * isRight, wallchkDistance, w_Layer); // 감지가 된다면 true 아니면 false
+            anim.SetBool("isSliding", isWall);
 
         if (Input.GetKeyDown(KeyCode.DownArrow)) // 내려갈때 
             slidingSpeed = 1f;
@@ -166,7 +166,7 @@ public class Player : MonoBehaviour
         else// 공중에 있는 경우
         {
             anim.SetBool("isFall", isFall); // true
-            if (!isFall) // Fall 중이 아닐 때만
+            if (!isGround) // Fall 중이 아닐 때만
             {
                 if (Input.GetKeyDown(KeyCode.Z) && !isAttack && canDoubleJump) // 공중에 있고 공격 중이 아니며 2단 점프 가능한 상태인 경우
                 {
