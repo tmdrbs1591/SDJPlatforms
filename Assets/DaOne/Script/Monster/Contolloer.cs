@@ -34,7 +34,7 @@ public class Contolloer : MonoBehaviour
         if (Vector2.Distance(transform.position, PlayerObj.position) > AttakeRange + contactDistance)
         {
             Chase();
-            Attake();
+           // Attake();
         }
     }
     void Chase()
@@ -76,6 +76,7 @@ public class Contolloer : MonoBehaviour
         }
         InAttake = false;
     }
+
     void re()
     {
         Speed = ReSpeed;

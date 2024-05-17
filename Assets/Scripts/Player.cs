@@ -38,9 +38,9 @@ public class Player : MonoBehaviour
     private bool isGround;
     private bool isDash;
     private bool isWall;
-    [SerializeField] private bool isWallJump;
+    private bool isWallJump;
     private bool canDoubleJump = true; // 2단 점프 가능한 상태인지 여부
-    [SerializeField] private bool isFall;
+    private bool isFall;
 
     private Rigidbody2D rigid;
     private Animator anim;
@@ -118,8 +118,8 @@ public class Player : MonoBehaviour
     {
         if (isGround)
             anim.SetTrigger("isDash");
-        isDash = true;
-        ghost.makeGhost = true;
+
+        isDash = true; ghost.makeGhost = true;
 
         // 대시 방향에 따라 힘을 가함
         Vector2 dashForce = new Vector2(isRight * 8 * 5, 0);
@@ -127,25 +127,19 @@ public class Player : MonoBehaviour
 
         yield return new WaitForSeconds(0.05f);
 
-        ghost.makeGhost = false;
-        isDash = false;
+        isDash = false; ghost.makeGhost = false;
+       
     }
 
     void Flip()
     {
 
         if (rigid.velocity.x < 0)
-        {
             isRight = -1f;
-        }
         else if (rigid.velocity.x > 0)
-        {
             isRight = 1f;
-        }
         else
-        {
             ghost.makeGhost = false;
-        }
 
     }
     void Jump() // 점프
@@ -156,12 +150,15 @@ public class Player : MonoBehaviour
         if (isGround)
         {
             anim.SetBool("isFall", isFall); //false
+
             canDoubleJump = true; // 땅에 닿은 경우 2단 점프 가능 상태로 설정
+
             if (Input.GetKeyDown(KeyCode.Z))
             {
                 rigid.velocity = Vector2.up * jumpPower;
                 anim.SetTrigger("isJump");
             }
+
         }
         else// 공중에 있는 경우
         {
@@ -170,7 +167,6 @@ public class Player : MonoBehaviour
             {
                 if (Input.GetKeyDown(KeyCode.Z) && !isAttack && canDoubleJump) // 공중에 있고 공격 중이 아니며 2단 점프 가능한 상태인 경우
                 {
-
                     canDoubleJump = false; // 2단 점프 사용
                     rigid.velocity = Vector2.up * jumpPower;
                     anim.SetTrigger("isDoubleJump");
