@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
+using static UnityEditor.PlayerSettings;
 
 public class Player : MonoBehaviour
 {
@@ -9,6 +11,7 @@ public class Player : MonoBehaviour
     [SerializeField] private float jumpPower; // 점프 파워
     [SerializeField] private float walljumpPower; // 벽 점프 파워
     [SerializeField] private float attackcoolTime = 0.5f; // 공격 쿨타임
+    [SerializeField] private float attackBuffercoolTime = 0.5f; // 공격 쿨타임
     [SerializeField] private float dashcoolTime = 0.5f; // 대쉬 쿨타임
     [SerializeField] private float slidingSpeed; //벽 내려가는 스피드
 
@@ -23,6 +26,11 @@ public class Player : MonoBehaviour
     [SerializeField] private Transform wallChkPos; // 플레이어 벽 감지 위치
     [SerializeField] private float wallchkDistance; // 플레이어 벽 감지 범위
     [SerializeField] private LayerMask w_Layer; // 벽 감지 레이어
+
+    [Header("플레이어 공격")]
+    [SerializeField] private Vector2 attackboxSize;
+    [SerializeField] private Transform Attackpos;
+    [SerializeField] private float attackdamage;
 
     [SerializeField] private Ghost ghost;
 
@@ -62,8 +70,8 @@ public class Player : MonoBehaviour
     }
     void Wall() // 벽타기
     {
-            isWall = Physics2D.Raycast(wallChkPos.position, Vector2.right * isRight, wallchkDistance, w_Layer); // 감지가 된다면 true 아니면 false
-            anim.SetBool("isSliding", isWall);
+        isWall = Physics2D.Raycast(wallChkPos.position, Vector2.right * isRight, wallchkDistance, w_Layer); // 감지가 된다면 true 아니면 false
+        anim.SetBool("isSliding", isWall);
 
         if (Input.GetKeyDown(KeyCode.DownArrow)) // 내려갈때 
             slidingSpeed = 1f;
@@ -98,7 +106,7 @@ public class Player : MonoBehaviour
             if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow)) x = Input.GetAxis("Horizontal");
             else x = 0;
 
-           rigid.velocity = new Vector2(x * moveSpeed, rigid.velocity.y);
+            rigid.velocity = new Vector2(x * moveSpeed, rigid.velocity.y);
 
             if (Mathf.Abs(rigid.velocity.x) > 0) anim.SetBool("isRun", true);
             else anim.SetBool("isRun", false);
@@ -113,6 +121,10 @@ public class Player : MonoBehaviour
             }
             else dashcurTime -= Time.deltaTime;
         }
+
+
+        if (isAttack)
+            rigid.velocity = new Vector2(0, rigid.velocity.y);
     }
     IEnumerator Dash()
     {
@@ -122,13 +134,13 @@ public class Player : MonoBehaviour
         isDash = true; ghost.makeGhost = true;
 
         // 대시 방향에 따라 힘을 가함
-        Vector2 dashForce = new Vector2(isRight * 8 * 5, 0);
+        Vector2 dashForce = new Vector2(isRight * 4 * 5, 0);
         rigid.AddForce(dashForce, ForceMode2D.Impulse);
 
-        yield return new WaitForSeconds(0.05f);
+        yield return new WaitForSeconds(0.08f);
 
         isDash = false; ghost.makeGhost = false;
-       
+
     }
 
     void Flip()
@@ -181,21 +193,26 @@ public class Player : MonoBehaviour
         attackBuffer -= Time.deltaTime; // 공격중일때 키 입력 되는지 감지하기 위한 버퍼
         if (attackBuffer <= 0) attackIndex = 1;//0이하로 내려가면 1로 설정
         if (Input.GetKeyDown(KeyCode.X))
-            attackBuffer = 0.329f; // 키 누르면 버퍼 초 시작
+            attackBuffer = attackBuffercoolTime; // 키 누르면 버퍼 초 시작
 
         if (AttackcurTime <= 0) // 공격 쿨타임
         {
             if (attackBuffer > 0) //버퍼가 0이 되었으면 실행
             {
+
                 switch (attackIndex)
                 {
                     case 1: // 첫번째 공격
+
+                        StartCoroutine(DamageAttack(0.2f,0));
                         AttackcurTime = attackcoolTime;
-                        StartCoroutine(IsAttacking(attackcoolTime));
+                        StartCoroutine(IsAttacking(0.35f));
+
                         break;
                     case 2: // 두번째 공격
+                        StartCoroutine(DamageAttack(0.2f,1));
                         AttackcurTime = attackcoolTime;
-                        StartCoroutine(IsAttacking(attackcoolTime));
+                        StartCoroutine(IsAttacking(0.35f));
                         break;
 
                 }
@@ -216,10 +233,26 @@ public class Player : MonoBehaviour
         isAttack = false;
 
     }
-
+    IEnumerator DamageAttack(float waitTime,float plusDamage)
+    {
+        yield return new WaitForSeconds(waitTime);
+        Collider2D[] collider2Ds = Physics2D.OverlapBoxAll(Attackpos.position, attackboxSize, 0);
+        foreach (Collider2D collider in collider2Ds)
+        {
+            if (collider != null)
+            {
+                if (collider.tag == "Enemy")
+                {
+                    collider.GetComponent<EnemyBase>().TakeDamage(attackdamage + plusDamage);
+                }
+            }
+        }
+    }
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.green;
         Gizmos.DrawRay(wallChkPos.position, Vector2.right * isRight * wallchkDistance);
+        Gizmos.color = Color.blue;
+        Gizmos.DrawWireCube(Attackpos.position, attackboxSize);
     }
 }
