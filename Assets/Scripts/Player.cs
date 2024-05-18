@@ -1,4 +1,5 @@
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -60,10 +61,7 @@ public class Player : MonoBehaviour
         Wall();
 
 
-        if (Input.GetKey(KeyCode.L))
-        {
-            SceneManager.LoadScene(1);
-        }  
+      
     }
     void Wall() // 벽타기
     {
@@ -99,7 +97,7 @@ public class Player : MonoBehaviour
         if (!isDash)
         {
             float x;
-            if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow)) x = Input.GetAxis("Horizontal");
+            if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow)) x = Input.GetAxis("Horizontal"); // 움직이기
             else x = 0;
 
             rigid.velocity = new Vector2(x * PlayerStatManager.instance.moveSpeed, rigid.velocity.y);
@@ -111,6 +109,7 @@ public class Player : MonoBehaviour
             {
                 if (Input.GetKey(KeyCode.C)) // 대쉬
                 {
+
                     dashcurTime = PlayerStatManager.instance.dashcoolTime;
                     StartCoroutine(Dash());
                 }
@@ -119,13 +118,14 @@ public class Player : MonoBehaviour
         }
 
 
-        if (isAttack)
+        if (isAttack && isGround)
             rigid.velocity = new Vector2(0, rigid.velocity.y);
     }
     IEnumerator Dash()
     {
         if (isGround)
             anim.SetTrigger("isDash");
+        isAttack = false;
 
         isDash = true; ghost.makeGhost = true;
 
@@ -202,13 +202,13 @@ public class Player : MonoBehaviour
 
                         StartCoroutine(DamageAttack(0.2f,0));
                         AttackcurTime = PlayerStatManager.instance.attackcoolTime;
-                        StartCoroutine(IsAttacking(0.35f));
+                        StartCoroutine(IsAttacking(PlayerStatManager.instance.attackcoolTime - 0.08f));
 
                         break;
                     case 2: // 두번째 공격
                         StartCoroutine(DamageAttack(0.2f,1));
                         AttackcurTime = PlayerStatManager.instance.attackcoolTime;
-                        StartCoroutine(IsAttacking(0.35f));
+                        StartCoroutine(IsAttacking(PlayerStatManager.instance.attackcoolTime - 0.08f));
                         break;
 
                 }
@@ -244,6 +244,8 @@ public class Player : MonoBehaviour
             }
         }
     }
+ 
+   
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.green;

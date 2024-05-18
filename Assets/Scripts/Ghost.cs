@@ -5,8 +5,9 @@ using UnityEngine;
 public class Ghost : MonoBehaviour
 {
     [SerializeField] private float ghostDelay;
-    private float ghostDelaySeconds;
     [SerializeField] private GameObject ghost;
+
+    private float ghostDelaySeconds;
     public bool makeGhost = false;
     // Start is called before the first frame update
     void Start()

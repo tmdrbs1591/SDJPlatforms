@@ -9,6 +9,6 @@ EditorBuildSettings:
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Scenes/NextStage.unity
-    guid: 9d943c176d371c04abefa43b7d6ce357
+    path: Assets/Scenes/GoldStage.unity
+    guid: d00d1dbdc9830b140aaa52bbf02ec50b
   m_configObjects: {}

@@ -16,7 +16,7 @@ public class EnemyBase : MonoBehaviour
     [SerializeField] private float knockBackPowr = 1.5f; // 넉백 범위
 
     [Header("메테리얼")]
-    [SerializeField] private Material hitMaterial; 
+    [SerializeField] private Material hitMaterial;
     [SerializeField] private Material nomalMaterial;
 
     [Header("체력,스케일")]
@@ -28,9 +28,8 @@ public class EnemyBase : MonoBehaviour
     [SerializeField] private TMP_Text damageText;
     [SerializeField] private GameObject damageEffect;
 
-
     private bool inChase = false; // 추격 중인지 여부
-    private bool isDie = false; 
+    private bool isDie = false;
     private Rigidbody2D rigid; // Rigidbody2D 컴포넌트
     private Animator anim;
     private SpriteRenderer spriteren;
@@ -41,6 +40,7 @@ public class EnemyBase : MonoBehaviour
         rigid = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         spriteren = GetComponent<SpriteRenderer>();
+        isRight = scale;
 
         GameObject player = GameObject.FindWithTag("Player");
 
@@ -50,14 +50,16 @@ public class EnemyBase : MonoBehaviour
 
     private void Update()
     {
-      
-        Chase();
-        Flip();
-        Die();
+        if (!isDie)
+        {
+            Chase();
+            Flip();
+            Die();
+        }
     }
 
-    void Chase()
-    {if (!isDie) { 
+    void Chase() // 따라오는거
+    {
         Collider2D[] hit = Physics2D.OverlapCircleAll(transform.position, radius, targetLayer);
 
         foreach (Collider2D col in hit)
@@ -80,36 +82,44 @@ public class EnemyBase : MonoBehaviour
         }
 
         inChase = false;
-        }
     }
+
     void Die()
     {
         if (curHp <= 0)
         {
             isDie = true;
             anim.SetTrigger("isDie");
-            Invoke("Destroy", 6f);
+            Invoke("DestroyEnemy", 5f);
+            GameManager.instance.spawnManager.DeathMonster += 1; // 죽은 카운트 추가
         }
     }
-    void Destroy()
+
+    void DestroyEnemy()
     {
         Destroy(gameObject);
     }
+
     void Flip()
     {
-     
-        if (rigid.velocity.x < 0) { transform.localScale = new Vector3(isRight, scale, scale); isRight = -scale; }
-           
-        else if (rigid.velocity.x > 0) { transform.localScale = new Vector3(isRight, scale, scale); isRight = scale; }
-          
-
+        if (rigid.velocity.x < 0)
+        {
+            isRight = -scale;
+        }
+        else if (rigid.velocity.x > 0)
+        {
+            isRight = scale;
+        }
+        transform.localScale = new Vector3(isRight, scale, scale);
     }
+
     public void TakeDamage(float damage)
     {
-        float randomX = Random.Range(transform.position.x+0.2f, transform.position.x - 0.4f);
-        float randomY = Random.Range(transform.position.y  +0.3f, transform.position.y+ 0.7f);
+        float randomX = Random.Range(transform.position.x + 0.2f, transform.position.x - 0.4f);
+        float randomY = Random.Range(transform.position.y + 0.3f, transform.position.y + 0.7f);
 
-        Vector3 randomPosition = new Vector3(randomX, randomY,-5);
+        Vector3 randomPosition = new Vector3(randomX, randomY, -5);
+
         if (!isDie)
         {
             StartCoroutine(HitRoutine());
@@ -120,7 +130,6 @@ public class EnemyBase : MonoBehaviour
             transform.Translate(new Vector2(isRight * -1 * knockBackPowr, rigid.velocity.y));
             curHp -= damage;
         }
-
     }
 
     private IEnumerator HitRoutine()
