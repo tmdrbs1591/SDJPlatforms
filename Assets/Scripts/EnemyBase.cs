@@ -7,19 +7,24 @@ using UnityEngine.UIElements;
 
 public class EnemyBase : MonoBehaviour
 {
+    [Header("몬스터 스텟")]
     [SerializeField] private float speed = 3f; // 이동 속도
     [SerializeField] private float radius = 5f; // 추격 범위 원의 반지름
     [SerializeField] private LayerMask targetLayer; // 추격할 타겟의 레이어
     [SerializeField] private Transform playerObj; // 플레이어의 위치
     [SerializeField] private float contactDistance = 1.5f; // 근접 거리 범위
+    [SerializeField] private float knockBackPowr = 1.5f; // 넉백 범위
 
+    [Header("메테리얼")]
     [SerializeField] private Material hitMaterial; 
     [SerializeField] private Material nomalMaterial;
 
+    [Header("체력,스케일")]
     [SerializeField] private float curHp;
     [SerializeField] private float MaxHp;
     [SerializeField] private float scale;
 
+    [Header("이펙트")]
     [SerializeField] private TMP_Text damageText;
     [SerializeField] private GameObject damageEffect;
 
@@ -36,6 +41,11 @@ public class EnemyBase : MonoBehaviour
         rigid = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         spriteren = GetComponent<SpriteRenderer>();
+
+        GameObject player = GameObject.FindWithTag("Player");
+
+        if (player != null)
+            playerObj = player.transform;
     }
 
     private void Update()
@@ -87,11 +97,11 @@ public class EnemyBase : MonoBehaviour
     }
     void Flip()
     {
-        transform.localScale = new Vector3(isRight, scale, scale);
-        if (rigid.velocity.x < 0)
-            isRight = -scale;
-        else if (rigid.velocity.x > 0)
-            isRight = scale;
+     
+        if (rigid.velocity.x < 0) { transform.localScale = new Vector3(isRight, scale, scale); isRight = -scale; }
+           
+        else if (rigid.velocity.x > 0) { transform.localScale = new Vector3(isRight, scale, scale); isRight = scale; }
+          
 
     }
     public void TakeDamage(float damage)
@@ -107,7 +117,7 @@ public class EnemyBase : MonoBehaviour
             Instantiate(damageText, randomPosition, Quaternion.identity).text = damage.ToString();
             Instantiate(damageEffect, randomPosition, Quaternion.identity);
             anim.SetTrigger("isHit");
-            transform.Translate(new Vector2(isRight * -1 * 0.5f, rigid.velocity.y));
+            transform.Translate(new Vector2(isRight * -1 * knockBackPowr, rigid.velocity.y));
             curHp -= damage;
         }
 

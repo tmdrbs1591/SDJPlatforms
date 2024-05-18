@@ -1,18 +1,11 @@
 using System.Collections;
-using System.Collections.Generic;
-using System.Threading;
 using UnityEngine;
-using static UnityEditor.PlayerSettings;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
-    [Header("플레이어 스텟")]
-    [SerializeField] private float moveSpeed; // 이동속도
-    [SerializeField] private float jumpPower; // 점프 파워
-    [SerializeField] private float walljumpPower; // 벽 점프 파워
-    [SerializeField] private float attackcoolTime = 0.5f; // 공격 쿨타임
-    [SerializeField] private float attackBuffercoolTime = 0.5f; // 공격 쿨타임
-    [SerializeField] private float dashcoolTime = 0.5f; // 대쉬 쿨타임
+    [Header("플레이어 기본스텟")]
+    [SerializeField] private float attackBuffercoolTime = 0.5f; 
     [SerializeField] private float slidingSpeed; //벽 내려가는 스피드
 
     [Header("플레이어 바닥감지")]
@@ -30,8 +23,6 @@ public class Player : MonoBehaviour
     [Header("플레이어 공격")]
     [SerializeField] private Vector2 attackboxSize;
     [SerializeField] private Transform Attackpos;
-    [SerializeField] private float attackdamage;
-
     [SerializeField] private Ghost ghost;
 
 
@@ -67,6 +58,12 @@ public class Player : MonoBehaviour
         Jump();
         Attack();
         Wall();
+
+
+        if (Input.GetKey(KeyCode.L))
+        {
+            SceneManager.LoadScene(1);
+        }  
     }
     void Wall() // 벽타기
     {
@@ -83,12 +80,11 @@ public class Player : MonoBehaviour
             canDoubleJump = true; isWallJump = false; // 2단점프 가능하게 하고 벽점프 중이 아니다
             rigid.velocity = new Vector2(rigid.velocity.x, rigid.velocity.y * slidingSpeed);
 
-
             if (Input.GetKeyDown(KeyCode.Z))
             {
                 isWallJump = true;
                 Invoke("FreezeX", 0.25f);
-                rigid.velocity = new Vector2(-isRight * walljumpPower, 2.5f * walljumpPower);
+                rigid.velocity = new Vector2(-isRight * PlayerStatManager.instance.walljumpPower, 2.5f * PlayerStatManager.instance.walljumpPower);
                 isRight = isRight * -1; anim.SetTrigger("isJump");
             }
         }
@@ -106,7 +102,7 @@ public class Player : MonoBehaviour
             if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow)) x = Input.GetAxis("Horizontal");
             else x = 0;
 
-            rigid.velocity = new Vector2(x * moveSpeed, rigid.velocity.y);
+            rigid.velocity = new Vector2(x * PlayerStatManager.instance.moveSpeed, rigid.velocity.y);
 
             if (Mathf.Abs(rigid.velocity.x) > 0) anim.SetBool("isRun", true);
             else anim.SetBool("isRun", false);
@@ -115,7 +111,7 @@ public class Player : MonoBehaviour
             {
                 if (Input.GetKey(KeyCode.C)) // 대쉬
                 {
-                    dashcurTime = dashcoolTime;
+                    dashcurTime = PlayerStatManager.instance.dashcoolTime;
                     StartCoroutine(Dash());
                 }
             }
@@ -167,7 +163,7 @@ public class Player : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.Z))
             {
-                rigid.velocity = Vector2.up * jumpPower;
+                rigid.velocity = Vector2.up * PlayerStatManager.instance.jumpPower;
                 anim.SetTrigger("isJump");
             }
 
@@ -180,7 +176,7 @@ public class Player : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.Z) && !isAttack && canDoubleJump) // 공중에 있고 공격 중이 아니며 2단 점프 가능한 상태인 경우
                 {
                     canDoubleJump = false; // 2단 점프 사용
-                    rigid.velocity = Vector2.up * jumpPower;
+                    rigid.velocity = Vector2.up * PlayerStatManager.instance.jumpPower;
                     anim.SetTrigger("isDoubleJump");
                 }
 
@@ -205,13 +201,13 @@ public class Player : MonoBehaviour
                     case 1: // 첫번째 공격
 
                         StartCoroutine(DamageAttack(0.2f,0));
-                        AttackcurTime = attackcoolTime;
+                        AttackcurTime = PlayerStatManager.instance.attackcoolTime;
                         StartCoroutine(IsAttacking(0.35f));
 
                         break;
                     case 2: // 두번째 공격
                         StartCoroutine(DamageAttack(0.2f,1));
-                        AttackcurTime = attackcoolTime;
+                        AttackcurTime = PlayerStatManager.instance.attackcoolTime;
                         StartCoroutine(IsAttacking(0.35f));
                         break;
 
@@ -243,7 +239,7 @@ public class Player : MonoBehaviour
             {
                 if (collider.tag == "Enemy")
                 {
-                    collider.GetComponent<EnemyBase>().TakeDamage(attackdamage + plusDamage);
+                    collider.GetComponent<EnemyBase>().TakeDamage(PlayerStatManager.instance.attackdamage + plusDamage);
                 }
             }
         }
