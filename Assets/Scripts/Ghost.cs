@@ -30,6 +30,7 @@ public class Ghost : MonoBehaviour
                 //Generate a ghost
                 GameObject currentGhost = Instantiate(ghost, transform.position, transform.rotation);
                 Sprite currentSprite = GetComponentInChildren<SpriteRenderer>().sprite;
+
                 currentGhost.transform.localScale = this.transform.localScale;
 
                 currentGhost.GetComponent<SpriteRenderer>().sprite = currentSprite;

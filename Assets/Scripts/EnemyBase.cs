@@ -26,7 +26,6 @@ public class EnemyBase : MonoBehaviour
 
     [Header("이펙트")]
     [SerializeField] private TMP_Text damageText;
-    [SerializeField] private GameObject damageEffect;
 
     private bool inChase = false; // 추격 중인지 여부
     private bool isDie = false;
@@ -125,7 +124,8 @@ public class EnemyBase : MonoBehaviour
             StartCoroutine(HitRoutine());
 
             Instantiate(damageText, randomPosition, Quaternion.identity).text = damage.ToString();
-            Instantiate(damageEffect, randomPosition, Quaternion.identity);
+
+            ObjectPool.SpawnFromPool("HitEffect", randomPosition);
             anim.SetTrigger("isHit");
             transform.Translate(new Vector2(isRight * -1 * knockBackPowr, rigid.velocity.y));
             curHp -= damage;
