@@ -59,9 +59,10 @@ public class Player : MonoBehaviour
         Jump();
         Attack();
         Wall();
+        attackBuffercoolTime = PlayerStatManager.instance.attackcoolTime - 0.01f;
 
 
-      
+
     }
     void Wall() // º®Å¸±â
     {
@@ -111,7 +112,7 @@ public class Player : MonoBehaviour
                 {
 
                     dashcurTime = PlayerStatManager.instance.dashcoolTime;
-                    StartCoroutine(Dash());
+                    StartCoroutine(Dash()); 
                 }
             }
             else dashcurTime -= Time.deltaTime;

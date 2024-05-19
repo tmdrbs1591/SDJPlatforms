@@ -7,6 +7,8 @@ public class GameManager : MonoBehaviour
     public static GameManager instance { get; private set; }
     public SpawnManager spawnManager;
     public GameObject fadeOut;
+    public GameObject fadein;
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -21,5 +23,9 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         
+    }
+    public void FadeIn()
+    {
+        fadein.SetActive(true);
     }
 }

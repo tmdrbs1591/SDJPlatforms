@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 public class Potal : MonoBehaviour
 {
     public string type;
-    public GameObject fadein;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,7 +28,7 @@ public class Potal : MonoBehaviour
 
     IEnumerator FadeScene()
     {
-        fadein.SetActive(true);
+        GameManager.instance.FadeIn();
         yield return new WaitForSeconds(1.1f);
         SceneManager.LoadScene(type);
     }
