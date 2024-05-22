@@ -2,8 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
-using UnityEngine.UIElements;
 
 public class EnemyBase : MonoBehaviour
 {
@@ -27,6 +27,9 @@ public class EnemyBase : MonoBehaviour
     [Header("이펙트")]
     [SerializeField] private TMP_Text damageText;
 
+    [SerializeField] Slider Hpbar;
+    [SerializeField] Slider Hpbar2;
+
     private bool inChase = false; // 추격 중인지 여부
     private bool isDie = false;
     private Rigidbody2D rigid; // Rigidbody2D 컴포넌트
@@ -49,14 +52,21 @@ public class EnemyBase : MonoBehaviour
 
     private void Update()
     {
+        HPBar();
+
         if (!isDie)
         {
             Chase();
             Flip();
             Die();
+         
         }
     }
-
+    void HPBar()
+    {
+        Hpbar.value = Mathf.Lerp(Hpbar.value, (float)curHp / (float)MaxHp, Time.deltaTime * 20); ;
+        Hpbar2.value = Mathf.Lerp(Hpbar2.value, (float)curHp / (float)MaxHp, Time.deltaTime * 3f); ;
+    }
     void Chase() // 따라오는거
     {
         Collider2D[] hit = Physics2D.OverlapCircleAll(transform.position, radius, targetLayer);
@@ -91,7 +101,12 @@ public class EnemyBase : MonoBehaviour
             anim.SetTrigger("isDie");
             Invoke("DestroyEnemy", 5f);
             GameManager.instance.spawnManager.DeathMonster += 1; // 죽은 카운트 추가
+
+            Hpbar.gameObject.SetActive(false);
+            Hpbar2.gameObject.SetActive(false);
         }
+  
+    
     }
 
     void DestroyEnemy()
@@ -109,7 +124,12 @@ public class EnemyBase : MonoBehaviour
         {
             isRight = scale;
         }
-        transform.localScale = new Vector3(isRight, scale, scale);
+        //transform.localScale = new Vector3(isRight, scale, scale);
+        if (isRight == -1)
+            spriteren.flipX = true;
+        else
+            spriteren.flipX = false;
+
     }
 
     public void TakeDamage(float damage)
@@ -121,6 +141,9 @@ public class EnemyBase : MonoBehaviour
 
         if (!isDie)
         {
+            Hpbar.gameObject.SetActive(true);
+            Hpbar2.gameObject.SetActive(true);
+
             StartCoroutine(HitRoutine());
 
             Instantiate(damageText, randomPosition, Quaternion.identity).text = damage.ToString();
